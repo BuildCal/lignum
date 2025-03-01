@@ -1,943 +1,856 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lignum Doors | Australia's Premier Timber Entry Doors | 100% Australian Made</title>
-    <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        body {
-            background-color: #fff;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Color Variables */
-        :root {
-            --primary: #ffbd59;
-            --dark: #000;
-            --light: #fff;
-            --gray: #f5f5f5;
-            --wood: #cd9b5e;
-        }
-
-        /* Typography */
-        h1, h2, h3, h4 {
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-
-        h2:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 3px;
-            width: 60px;
-            background-color: var(--primary);
-        }
-
-        p {
-            margin-bottom: 1rem;
-            font-weight: 300;
-        }
-
-        /* Layout Components */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .flex {
-            display: flex;
-        }
-
-        .flex-column {
-            flex-direction: column;
-        }
-
-        .justify-between {
-            justify-content: space-between;
-        }
-
-        .align-center {
-            align-items: center;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary);
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #e9a84a;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--dark);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: var(--dark);
-        }
-
-        .btn-dark {
-            background-color: var(--dark);
-            color: var(--light);
-        }
-
-        .btn-dark:hover {
-            background-color: #333;
-        }
-
-        /* Navigation */
-        nav {
-            padding: 20px 0;
-            background-color: var(--light);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            width: 150px;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo {
-            height: 70px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .mobile-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            max-width: 650px;
-            margin-left: 8%;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-
-
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-            background-color: var(--gray);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .feature-card {
-            background-color: var(--light);
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        /* Collection Section */
-        .collection {
-            padding: 100px 0;
-        }
-
-        .collection-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .collection-header h2:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .collection-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .collection-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .collection-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .collection-item:hover .collection-image {
-            transform: scale(1.05);
-        }
-
-        .collection-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            padding: 20px;
-            color: var(--light);
-            transform: translateY(0);
-            transition: transform 0.3s ease;
-        }
-
-        .collection-item:hover .collection-info {
-            transform: translateY(-10px);
-        }
-
-        .collection-name {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .collection-price {
-            font-weight: 300;
-            font-size: 0.9rem;
-            color: var(--primary);
-        }
-
-        /* About Section */
-        .about {
-            padding: 100px 0;
-            background-color: var(--gray);
-        }
-
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-image {
-            width: 100%;
-            border-radius: 5px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .about-content h2:after {
-            background-color: var(--primary);
-        }
-
-        .about-feature {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .about-feature-icon {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-right: 15px;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .testimonials h2:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .testimonial-slider {
-            max-width: 700px;
-            margin: 0 auto;
-            margin-top: 50px;
-        }
-
-        .testimonial-card {
-            background-color: var(--light);
-            padding: 40px;
-            border-radius: 5px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
-            margin: 20px;
-        }
-
-        .testimonial-text {
-            font-size: 1.1rem;
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .testimonial-text:before, .testimonial-text:after {
-            content: '"';
-            font-size: 2rem;
-            color: var(--primary);
-            position: absolute;
-        }
-
-        .testimonial-text:before {
-            top: -20px;
-            left: -10px;
-        }
-
-        .testimonial-text:after {
-            bottom: -40px;
-            right: -10px;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
-        }
-
-        .testimonial-info h4 {
-            margin-bottom: 0;
-        }
-
-        .testimonial-role {
-            font-size: 0.8rem;
-            color: #777;
-        }
-
-        /* CTA Section */
-        .cta {
-            padding: 80px 0;
-            background-color: var(--dark);
-            color: var(--light);
-            text-align: center;
-        }
-
-        .cta h2 {
-            color: var(--light);
-        }
-
-        .cta h2:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #f8f8f8;
-            padding: 60px 0 20px;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-        }
-
-        .footer-logo {
-            width: 120px;
-            margin-bottom: 20px;
-        }
-
-        .footer-about p {
-            margin-bottom: 20px;
-        }
-
-        .footer-heading {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-heading:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 2px;
-            width: 40px;
-            background-color: var(--primary);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            text-decoration: none;
-            color: #555;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .contact-icon {
-            margin-right: 10px;
-            color: var(--primary);
-        }
-
-        .social-links {
-            display: flex;
-            margin-top: 20px;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: #eee;
-            border-radius: 50%;
-            margin-right: 10px;
-            color: #555;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background-color: var(--primary);
-            color: var(--light);
-        }
-
-        .copyright {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        /* Australian Made Badge */
-        .australian-made {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .australian-made img {
-            width: 60px;
-            margin-right: 15px;
-        }
-
-        .australian-made p {
-            font-weight: 600;
-            margin-bottom: 0;
-        }
-
-        /* Media Queries */
-        @media (max-width: 991px) {
-            .features-grid,
-            .collection-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-
-            .about-image {
-                order: 1;
-            }
-
-            .about-content {
-                order: 2;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                height: auto;
-                padding: 50px 5%;
-                flex-direction: column;
-            }
-
-            .hero-content {
-                margin: 0 auto;
-                text-align: center;
-                width: 100%;
-                max-width: none;
-                flex: none;
-                margin-bottom: 40px;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .hero-image-container {
-                flex: none;
-                width: 100%;
-                height: 350px;
-            }
-
-            .mobile-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--light);
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 50px;
-                transition: left 0.3s ease;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                margin: 15px 0;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .features-grid,
-            .collection-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lignum Doors | Australia's Premier Timber Entry Doors | 100% Australian Made</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: var(--light);
+      color: #333;
+      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+    }
+    /* Color Variables */
+    :root {
+      --primary: #d8a48f; /* Softer, muted gold */
+      --dark: #000;
+      --light: #fff;
+      --gray: #f5f5f5;
+      --wood: #cd9b5e;
+    }
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    h2:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 60px;
+      background-color: var(--primary);
+    }
+    p {
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    /* Layout Components */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .flex {
+      display: flex;
+    }
+    .flex-column {
+      flex-direction: column;
+    }
+    .justify-between {
+      justify-content: space-between;
+    }
+    .align-center {
+      align-items: center;
+    }
+    .text-center {
+      text-align: center;
+    }
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: var(--primary);
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #cfa48a;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--dark);
+    }
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: var(--dark);
+    }
+    .btn-dark {
+      background-color: var(--dark);
+      color: var(--light);
+    }
+    .btn-dark:hover {
+      background-color: #333;
+    }
+    /* Navigation */
+    nav {
+      padding: 20px 0;
+      background-color: var(--light);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      height: 70px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    .nav-links li {
+      margin-left: 30px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    .mobile-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    /* Hero Section */
+    .hero {
+      height: 80vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+    }
+    .hero-content {
+      max-width: 650px;
+      margin-left: 8%;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .hero h2 {
+      font-style: italic;
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+    }
+    .hero-image-container {
+      flex: 1;
+    }
+    .hero-featured-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 5px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    }
+    /* Features Section */
+    .features {
+      padding: 100px 0;
+      background-color: var(--gray);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+    .feature-card {
+      background-color: var(--light);
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    /* Collection Section */
+    .collection {
+      padding: 100px 0;
+    }
+    .collection-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .collection-header h2:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .collection-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .collection-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .collection-item:hover .collection-image {
+      transform: scale(1.05);
+    }
+    .collection-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 20px;
+      color: var(--light);
+      transform: translateY(0);
+      transition: transform 0.3s ease;
+    }
+    .collection-item:hover .collection-info {
+      transform: translateY(-10px);
+    }
+    .collection-name {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+    .collection-price {
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+    /* About Section */
+    .about {
+      padding: 100px 0;
+      background-color: var(--gray);
+    }
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .about-image {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .about-content h2:after {
+      background-color: var(--primary);
+    }
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .about-feature-icon {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-right: 15px;
+    }
+    /* Testimonials Section */
+    .testimonials {
+      padding: 100px 0;
+      text-align: center;
+    }
+    .testimonials h2:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .testimonial-slider {
+      max-width: 700px;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+    .testimonial-card {
+      background-color: var(--light);
+      padding: 40px;
+      border-radius: 5px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+      margin: 20px;
+    }
+    .testimonial-text {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .testimonial-text:before, .testimonial-text:after {
+      content: '"';
+      font-size: 2rem;
+      color: var(--primary);
+      position: absolute;
+    }
+    .testimonial-text:before {
+      top: -20px;
+      left: -10px;
+    }
+    .testimonial-text:after {
+      bottom: -40px;
+      right: -10px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .testimonial-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+    .testimonial-info h4 {
+      margin-bottom: 0;
+    }
+    .testimonial-role {
+      font-size: 0.8rem;
+      color: #777;
+    }
+    /* CTA Section */
+    .cta {
+      padding: 80px 0;
+      background-color: var(--dark);
+      color: var(--light);
+      text-align: center;
+    }
+    .cta h2 {
+      color: var(--light);
+    }
+    .cta h2:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    /* Footer */
+    footer {
+      background-color: #f8f8f8;
+      padding: 60px 0 20px;
+    }
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+    .footer-about p {
+      margin-bottom: 20px;
+    }
+    .footer-heading {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .footer-heading:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 40px;
+      background-color: var(--primary);
+    }
+    .footer-links {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      text-decoration: none;
+      color: #555;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    .contact-icon {
+      margin-right: 10px;
+      color: var(--primary);
+    }
+    .social-links {
+      display: flex;
+      margin-top: 20px;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: #eee;
+      border-radius: 50%;
+      margin-right: 10px;
+      color: #555;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .social-link:hover {
+      background-color: var(--primary);
+      color: var(--light);
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    /* Australian Made Badge */
+    .australian-made {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .australian-made img {
+      width: 60px;
+      margin-right: 15px;
+    }
+    .australian-made p {
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    /* Media Queries */
+    @media (max-width: 991px) {
+      .features-grid,
+      .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 768px) {
+      .hero {
+        height: auto;
+        padding: 50px 5%;
+        flex-direction: column;
+      }
+      .hero-content {
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        max-width: none;
+        flex: none;
+        margin-bottom: 40px;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .hero-image-container {
+        flex: none;
+        width: 100%;
+        height: 350px;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--light);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 50px;
+        transition: left 0.3s ease;
+      }
+      .nav-links.active {
+        left: 0;
+      }
+      .nav-links li {
+        margin: 15px 0;
+      }
+    }
+    @media (max-width: 576px) {
+      .features-grid,
+      .collection-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <div class="logo-container">
-                <img src="logo.png" alt="Lignum Doors Logo" class="logo">
-            </div>
-            <div class="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#collection">Collection</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="btn">Get a Quote</a></li>
-            </ul>
-        </div>
-    </nav>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <div class="logo-container">
+        <img src="logo.png" alt="Lignum Doors Logo" class="logo">
+      </div>
+      <div class="mobile-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" class="btn">Get a Quote</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Elevate Your Home's First Impression</h1>
-            <h2 style="font-style: italic; color: #333; margin-bottom: 20px; font-weight: 400;">Australia's Premier Timber Entry Doors</h2>
-            <p>Premium Australian-made timber entry doors crafted with precision and elegance to welcome you home in style.</p>
-            <div class="hero-buttons">
-                <a href="#collection" class="btn">Explore Collection</a>
-                <a href="#contact" class="btn btn-outline">Contact Us</a>
-            </div>
-        </div>
-        <div class="hero-image-container">
-            <img src="hero-image.jpg" alt="Lignum Timber Entry Door" class="hero-featured-image">
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Elevate Your Home's Entrance</h1>
+      <h2>Australia's Premier Timber Entry Doors</h2>
+      <p>Experience premium, Australian-made timber entry doors crafted with precision and elegance to transform your home.</p>
+      <div class="hero-buttons">
+        <a href="#collection" class="btn">Explore Collection</a>
+        <a href="#contact" class="btn btn-outline">Contact Us</a>
+      </div>
+    </div>
+    <div class="hero-image-container">
+      <img src="hero-image.jpg" alt="Lignum Timber Entry Door" class="hero-featured-image">
+    </div>
+  </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2>Why Choose Lignum Doors</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tree"></i>
-                    </div>
-                    <h3>Premium Timber</h3>
-                    <p>Our doors are crafted from the finest sustainably sourced timber, ensuring beauty, durability, and environmental responsibility.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Solid Security</h3>
-                    <p>Our solid timber construction provides natural security and peace of mind while maintaining the elegant aesthetic of your entryway.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>Custom Design</h3>
-                    <p>Each door can be customized to match your home's unique style and your personal taste with various finishes and hardware options.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Quality Craftsmanship</h3>
-                    <p>Skilled Australian artisans handcraft each door with meticulous attention to detail, ensuring exceptional quality and finish.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-temperature-low"></i>
-                    </div>
-                    <h3>Energy Efficient</h3>
-                    <p>Our doors provide excellent insulation, helping maintain your home's temperature and reducing energy costs year-round.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>10-Year Warranty</h3>
-                    <p>We stand behind our craftsmanship with a comprehensive warranty, giving you peace of mind for years to come.</p>
-                </div>
-            </div>
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <h2>Why Choose Lignum Doors</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-tree"></i>
+          </div>
+          <h3>Premium Timber</h3>
+          <p>Crafted from the finest sustainably sourced timber to ensure lasting beauty and environmental responsibility.</p>
         </div>
-    </section>
-
-    <!-- Collection Section -->
-    <section class="collection" id="collection">
-        <div class="container">
-            <div class="collection-header">
-                <h2>Our Door Collection</h2>
-                <p>Discover our range of premium timber entry doors designed to enhance your home's character</p>
-            </div>
-            <div class="collection-grid">
-                <div class="collection-item">
-                    <img src="/api/placeholder/400/320" alt="placeholder" class="collection-image">
-                    <div class="collection-info">
-                        <h3 class="collection-name">Coastal Collection</h3>
-                        <p>Contemporary designs perfect for modern homes</p>
-                        <p class="collection-price">Starting from $1,950</p>
-                    </div>
-                </div>
-                <div class="collection-item">
-                    <img src="/api/placeholder/400/320" alt="placeholder" class="collection-image">
-                    <div class="collection-info">
-                        <h3 class="collection-name">Heritage Series</h3>
-                        <p>Traditional designs with timeless appeal</p>
-                        <p class="collection-price">Starting from $2,150</p>
-                    </div>
-                </div>
-                <div class="collection-item">
-                    <img src="/api/placeholder/400/320" alt="placeholder" class="collection-image">
-                    <div class="collection-info">
-                        <h3 class="collection-name">Executive Range</h3>
-                        <p>Sophisticated designs for luxury homes</p>
-                        <p class="collection-price">Starting from $2,450</p>
-                    </div>
-                </div>
-                <div class="collection-item">
-                    <img src="/api/placeholder/400/320" alt="placeholder" class="collection-image">
-                    <div class="collection-info">
-                        <h3 class="collection-name">Urban Collection</h3>
-                        <p>Sleek designs for contemporary urban homes</p>
-                        <p class="collection-price">Starting from $2,050</p>
-                    </div>
-                </div>
-                <div class="collection-item">
-                    <img src="/api/placeholder/400/320" alt="placeholder" class="collection-image">
-                    <div class="collection-info">
-                        <h3 class="collection-name">Hamptons Style</h3>
-                        <p>Elegant designs inspired by coastal luxury</p>
-                        <p class="collection-price">Starting from $2,250</p>
-                    </div>
-                </div>
-                <div class="collection-item">
-                    <img src="/api/placeholder/400/320" alt="placeholder" class="collection-image">
-                    <div class="collection-info">
-                        <h3 class="collection-name">Custom Design</h3>
-                        <p>Bespoke doors tailored to your specific needs</p>
-                        <p class="collection-price">Price on application</p>
-                    </div>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="#" class="btn">View Full Catalogue</a>
-            </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Solid Security</h3>
+          <p>Engineered for natural security and peace of mind, merging strength with aesthetic appeal.</p>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container about-container">
-            <div class="about-content">
-                <h2>About Lignum Doors</h2>
-                <p>At Lignum Doors, we combine traditional craftsmanship with modern techniques to create Australia's premier timber entry doors that stand the test of time. As a 100% Australian owned and operated company, we take pride in supporting local industry while delivering superior products.</p>
-                
-                <div class="about-feature">
-                    <div class="about-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div>
-                        <h4>Australian Made & Owned</h4>
-                        <p>Every door is manufactured in our Australian workshop by skilled local craftspeople.</p>
-                    </div>
-                </div>
-                
-                <div class="about-feature">
-                    <div class="about-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div>
-                        <h4>Premium Materials</h4>
-                        <p>We use only the highest quality sustainable timber and hardware to ensure lasting beauty and performance.</p>
-                    </div>
-                </div>
-                
-                <div class="about-feature">
-                    <div class="about-feature-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div>
-                        <h4>Traditional Joinery</h4>
-                        <p>Our craftspeople use time-honored techniques such as wedged mortise and tenon joints and shotgun shoulders to ensure durability and proper water drainage.</p>
-                    </div>
-                </div>
-                
-                <div class="australian-made">
-                    <img src="australian-made-logo.png" alt="Australian Made logo">
-                    <p>100% AUSTRALIAN OWNED AND MANUFACTURED</p>
-                </div>
-            </div>
-            <img src="about-image.jpg" alt="Lignum Doors Workshop" class="about-image">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3>Custom Design</h3>
+          <p>Personalize your door to reflect your home's unique style with a variety of finishes and hardware options.</p>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>What Our Customers Say</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">The door has completely transformed the entrance to our home. The quality of craftsmanship is exceptional and we've received so many compliments from visitors. Worth every penny!</p>
-                    <div class="testimonial-author">
-                        <img src="/api/placeholder/400/320" alt="placeholder" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <h4>Sarah Johnson</h4>
-                            <p class="testimonial-role">Homeowner, Sydney</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>Quality Craftsmanship</h3>
+          <p>Handcrafted by skilled Australian artisans using time-honored techniques for unmatched quality.</p>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to Enhance Your Home?</h2>
-            <p>Contact us today for a consultation and discover how a Lignum door can transform your home's entrance. Our experts are ready to help you select the perfect door for your style and needs.</p>
-            <a href="#" class="btn">Get Started</a>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-temperature-low"></i>
+          </div>
+          <h3>Energy Efficient</h3>
+          <p>Designed to provide excellent insulation, keeping your home comfortable and energy bills low.</p>
         </div>
-    </section>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>10-Year Warranty</h3>
+          <p>We back our craftsmanship with a comprehensive 10-year warranty for your peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container footer-container">
-            <div class="footer-about">
-                <img src="logo.png" alt="Lignum Doors Logo" class="footer-logo">
-                <h3 class="footer-heading">Lignum Doors</h3>
-                <p>Premium Australian made timber entry doors crafted with precision and elegance to welcome you home in style.</p>
-                <div class="australian-made">
-                    <img src="australian-made-logo.png" alt="Australian Made logo">
-                    <p>100% AUSTRALIAN OWNED</p>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-houzz"></i></a>
-                </div>
+  <!-- Collection Section -->
+  <section class="collection" id="collection">
+    <div class="container">
+      <div class="collection-header">
+        <h2>Our Door Collection</h2>
+        <p>Discover our range of exquisitely designed timber entry doors crafted to enhance your home's character.</p>
+      </div>
+      <div class="collection-grid">
+        <div class="collection-item">
+          <img src="/api/placeholder/400/320" alt="Coastal Collection" class="collection-image">
+          <div class="collection-info">
+            <h3 class="collection-name">Coastal Collection</h3>
+            <p>Contemporary designs perfect for modern homes</p>
+            <p class="collection-price">Starting from $1,950</p>
+          </div>
+        </div>
+        <div class="collection-item">
+          <img src="/api/placeholder/400/320" alt="Heritage Series" class="collection-image">
+          <div class="collection-info">
+            <h3 class="collection-name">Heritage Series</h3>
+            <p>Traditional designs with timeless appeal</p>
+            <p class="collection-price">Starting from $2,150</p>
+          </div>
+        </div>
+        <div class="collection-item">
+          <img src="/api/placeholder/400/320" alt="Executive Range" class="collection-image">
+          <div class="collection-info">
+            <h3 class="collection-name">Executive Range</h3>
+            <p>Sophisticated designs for luxury homes</p>
+            <p class="collection-price">Starting from $2,450</p>
+          </div>
+        </div>
+        <div class="collection-item">
+          <img src="/api/placeholder/400/320" alt="Urban Collection" class="collection-image">
+          <div class="collection-info">
+            <h3 class="collection-name">Urban Collection</h3>
+            <p>Sleek designs for contemporary urban homes</p>
+            <p class="collection-price">Starting from $2,050</p>
+          </div>
+        </div>
+        <div class="collection-item">
+          <img src="/api/placeholder/400/320" alt="Hamptons Style" class="collection-image">
+          <div class="collection-info">
+            <h3 class="collection-name">Hamptons Style</h3>
+            <p>Elegant designs inspired by coastal luxury</p>
+            <p class="collection-price">Starting from $2,250</p>
+          </div>
+        </div>
+        <div class="collection-item">
+          <img src="/api/placeholder/400/320" alt="Custom Design" class="collection-image">
+          <div class="collection-info">
+            <h3 class="collection-name">Custom Design</h3>
+            <p>Bespoke doors tailored to your specific needs</p>
+            <p class="collection-price">Price on application</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="#" class="btn">View Full Catalogue</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container about-container">
+      <div class="about-content">
+        <h2>About Lignum Doors</h2>
+        <p>At Lignum Doors, we merge traditional craftsmanship with modern innovation to create Australia’s premier timber entry doors. Proudly 100% Australian-owned, our products embody quality, sustainability, and a timeless elegance that enhances every home.</p>
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <i class="fas fa-check"></i>
+          </div>
+          <div>
+            <h4>Australian Made & Owned</h4>
+            <p>Every door is manufactured in our Australian workshop by skilled local craftspeople, ensuring authenticity and superior quality.</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <i class="fas fa-check"></i>
+          </div>
+          <div>
+            <h4>Premium Materials</h4>
+            <p>We select only the finest sustainable timber and hardware, creating doors that are as durable as they are beautiful.</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <i class="fas fa-check"></i>
+          </div>
+          <div>
+            <h4>Traditional Joinery</h4>
+            <p>Our artisans employ time-honored techniques to ensure each door not only stands out but stands the test of time.</p>
+          </div>
+        </div>
+        <div class="australian-made">
+          <img src="australian-made-logo.png" alt="Australian Made logo">
+          <p>100% AUSTRALIAN OWNED AND MANUFACTURED</p>
+        </div>
+      </div>
+      <img src="about-image.jpg" alt="Lignum Doors Workshop" class="about-image">
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The door has completely transformed the entrance to our home. The quality of craftsmanship is exceptional and we've received so many compliments!"</p>
+          <div class="testimonial-author">
+            <img src="/api/placeholder/400/320" alt="Customer Photo" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>Sarah Johnson</h4>
+              <p class="testimonial-role">Homeowner, Sydney</p>
             </div>
-            
-            <div class="footer-links-container">
-                <h3 class="footer-heading">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Our Collection</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-links-container">
-                <h3 class="footer-heading">Products</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Coastal Collection</a></li>
-                    <li><a href="#">Heritage Series</a></li>
-                    <li><a href="#">Executive Range</a></li>
-                    <li><a href="#">Urban Collection</a></li>
-                    <li><a href="#">Hamptons Style</a></li>
-                    <li><a href="#">Custom Design</a></li>
-                </ul>
-            </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone contact-icon"></i>
-                    <p>1300 LIGNUM (1300 544 686)</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope contact-icon"></i>
-                    <p>info@lignumdoors.com.au</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-clock contact-icon"></i>
-                    <p>Mon-Fri: 8:30am - 5:00pm<br>Sat: 9:00am
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Transform Your Entrance?</h2>
+      <p>Contact us for a consultation and discover how a Lignum door can redefine your home’s first impression with elegance and style.</p>
+      <a href="#" class="btn">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container footer-container">
+      <div class="footer-about">
+        <img src="logo.png" alt="Lignum Doors Logo" class="footer-logo">
+        <h3 class="footer-heading">Lignum Doors</h3>
+        <p>Premium Australian-made timber entry doors crafted with precision and elegance to welcome you home.</p>
+        <div class="australian-made">
+          <img src="australian-made-logo.png" alt="Australian Made logo">
+          <p>100% AUSTRALIAN OWNED</p>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-houzz"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-container">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Collection</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-container">
+        <h3 class="footer-heading">Products</h3>
+        <ul class="footer-links">
+          <li><a href="#">Coastal Collection</a></li>
+          <li><a href="#">Heritage Series</a></li>
+          <li><a href="#">Executive Range</a></li>
+          <li><a href="#">Urban Collection</a></li>
+          <li><a href="#">Hamptons Style</a></li>
+          <li><a href="#">Custom Design</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="contact-item">
+          <i class="fas fa-phone contact-icon"></i>
+          <p>1300 LIGNUM (1300 544 686)</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope contact-icon"></i>
+          <p>info@lignumdoors.com.au</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-clock contact-icon"></i>
+          <p>Mon-Fri: 8:30am - 5:00pm<br>Sat: 9:00am</p>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 Lignum Doors. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Navigation Toggle
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
+
