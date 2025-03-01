@@ -189,9 +189,6 @@
         /* Hero Section */
         .hero {
             height: 80vh;
-            background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1585128903626-582636ae8f0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
             position: relative;
             display: flex;
             align-items: center;
@@ -218,17 +215,7 @@
             gap: 15px;
         }
 
-        .hero-image {
-            position: absolute;
-            right: 5%;
-            bottom: -50px;
-            width: 45%;
-            max-width: 500px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            border: 10px solid white;
-            object-fit: cover;
-            height: auto;
-        }
+
 
         /* Features Section */
         .features {
@@ -691,7 +678,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" style="background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('hero-image.jpg'); background-size: cover; background-position: center;">
         <div class="hero-content">
             <h1>Elevate Your Home's First Impression</h1>
             <p>Premium Australian-made timber entry doors crafted with precision and elegance to welcome you home in style.</p>
@@ -700,7 +687,6 @@
                 <a href="#contact" class="btn btn-outline">Contact Us</a>
             </div>
         </div>
-        <img src="hero-image.jpeg" alt="Elegant timber entry door" class="hero-image">
     </section>
 
     <!-- Features Section -->
