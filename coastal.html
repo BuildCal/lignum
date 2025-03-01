@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coastal Collection | Lignum Doors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Base & Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--light);
+      color: #333;
+      line-height: 1.6;
+    }
+    :root {
+      --primary: #ffbd59;
+      --dark: #000;
+      --light: #fff;
+      --gray: #f5f5f5;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    h1 { font-size: 2.5rem; }
+    p { margin-bottom: 1rem; font-weight: 300; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    /* Navigation */
+    nav {
+      padding: 20px 0;
+      background-color: var(--light);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { height: 70px; width: auto; }
+    .nav-links { display: flex; list-style: none; }
+    .nav-links li { margin-left: 30px; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .mobile-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+    /* Product Details Section */
+    .product-details {
+      padding: 100px 0;
+      background-color: var(--gray);
+    }
+    .product-header { text-align: center; margin-bottom: 50px; }
+    .product-image {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      display: block;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .config-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: var(--light);
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: var(--primary);
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #e9a84a;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    /* Footer */
+    footer {
+      background-color: #f8f8f8;
+      padding: 40px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    /* Media Queries */
+    @media (max-width: 576px) {
+      .config-form { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <a href="product.html"><img src="logo.png" alt="Lignum Doors Logo" class="logo"></a>
+      <div class="mobile-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="product.html">Home</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Product Details Section -->
+  <section class="product-details">
+    <div class="container">
+      <div class="product-header">
+        <h1>Coastal Collection</h1>
+        <p>Customize your door from the Coastal Collection.</p>
+      </div>
+      <img src="/api/placeholder/600/400" alt="Coastal Collection Door" class="product-image">
+      <div class="config-form">
+        <form>
+          <!-- Size Option -->
+          <div class="form-group">
+            <label for="size">Size</label>
+            <select id="size" name="size">
+              <option value="">Select Size (Placeholder)</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
+          </div>
+          <!-- Timber Species Option -->
+          <div class="form-group">
+            <label for="timber">Timber Species</label>
+            <select id="timber" name="timber">
+              <option value="">Select Timber Species (Placeholder)</option>
+              <option value="species1">Species 1</option>
+              <option value="species2">Species 2</option>
+              <option value="species3">Species 3</option>
+            </select>
+          </div>
+          <!-- Glazing Option -->
+          <div class="form-group">
+            <label for="glazing">Glazing</label>
+            <select id="glazing" name="glazing">
+              <option value="">Select Glazing Option (Placeholder)</option>
+              <option value="glazing1">Glazing 1</option>
+              <option value="glazing2">Glazing 2</option>
+              <option value="glazing3">Glazing 3</option>
+            </select>
+          </div>
+          <div style="text-align: center; margin-top: 30px;">
+            <button type="submit" class="btn">Buy Now</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple Footer -->
+  <footer>
+    <p>&copy; 2025 Lignum Doors. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Optional: Mobile Navigation Toggle
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    mobileToggle.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+  </script>
+</body>
+</html>
