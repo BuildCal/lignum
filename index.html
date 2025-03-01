@@ -307,66 +307,6 @@
       color: var(--primary);
       margin-right: 15px;
     }
-    /* Testimonials Section */
-    .testimonials {
-      padding: 100px 0;
-      text-align: center;
-    }
-    .testimonials h2:after {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .testimonial-slider {
-      max-width: 700px;
-      margin: 0 auto;
-      margin-top: 50px;
-    }
-    .testimonial-card {
-      background-color: var(--light);
-      padding: 40px;
-      border-radius: 5px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.05);
-      margin: 20px;
-    }
-    .testimonial-text {
-      font-size: 1.1rem;
-      font-style: italic;
-      margin-bottom: 20px;
-      position: relative;
-    }
-    .testimonial-text:before, .testimonial-text:after {
-      content: '"';
-      font-size: 2rem;
-      color: var(--primary);
-      position: absolute;
-    }
-    .testimonial-text:before {
-      top: -20px;
-      left: -10px;
-    }
-    .testimonial-text:after {
-      bottom: -40px;
-      right: -10px;
-    }
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .testimonial-avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 15px;
-    }
-    .testimonial-info h4 {
-      margin-bottom: 0;
-    }
-    .testimonial-role {
-      font-size: 0.8rem;
-      color: #777;
-    }
     /* CTA Section */
     .cta {
       padding: 80px 0;
@@ -577,7 +517,7 @@
         <li><a href="#collection">Collection</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#" class="btn">Get a Quote</a></li>
+        <li><a href="product.html" class="btn">Buy a Door</a></li>
       </ul>
     </div>
   </nav>
@@ -697,17 +637,9 @@
             <p class="collection-price">Starting from $2,250</p>
           </div>
         </div>
-        <div class="collection-item">
-          <img src="/api/placeholder/400/320" alt="Custom Design" class="collection-image">
-          <div class="collection-info">
-            <h3 class="collection-name">Custom Design</h3>
-            <p>Bespoke doors tailored to your specific needs</p>
-            <p class="collection-price">Price on application</p>
-          </div>
-        </div>
       </div>
       <div style="text-align: center; margin-top: 40px;">
-        <a href="#" class="btn">View Full Catalogue</a>
+        <a href="product.html" class="btn">Buy a Door</a>
       </div>
     </div>
   </section>
@@ -754,31 +686,12 @@
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <div class="container">
-      <h2>What Our Customers Say</h2>
-      <div class="testimonial-slider">
-        <div class="testimonial-card">
-          <p class="testimonial-text">"The door has completely transformed the entrance to our home. The quality of craftsmanship is exceptional and we've received so many compliments!"</p>
-          <div class="testimonial-author">
-            <img src="/api/placeholder/400/320" alt="Customer Photo" class="testimonial-avatar">
-            <div class="testimonial-info">
-              <h4>Sarah Johnson</h4>
-              <p class="testimonial-role">Homeowner, Sydney</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA Section -->
   <section class="cta">
     <div class="container">
       <h2>Ready to Transform Your Entrance?</h2>
       <p>Contact us for a consultation and discover how a Lignum door can redefine your home’s first impression with elegance and style.</p>
-      <a href="#" class="btn">Get Started</a>
+      <a href="#contact" class="btn">Get Started</a>
     </div>
   </section>
 
@@ -803,23 +716,22 @@
       <div class="footer-links-container">
         <h3 class="footer-heading">Quick Links</h3>
         <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Our Collection</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#collection">Our Collection</a></li>
           <li><a href="#">Gallery</a></li>
           <li><a href="#">FAQs</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
         </ul>
       </div>
       <div class="footer-links-container">
         <h3 class="footer-heading">Products</h3>
         <ul class="footer-links">
-          <li><a href="#">Coastal Collection</a></li>
-          <li><a href="#">Heritage Series</a></li>
-          <li><a href="#">Executive Range</a></li>
-          <li><a href="#">Urban Collection</a></li>
-          <li><a href="#">Hamptons Style</a></li>
-          <li><a href="#">Custom Design</a></li>
+          <li><a href="product.html">Coastal Collection</a></li>
+          <li><a href="product.html">Heritage Series</a></li>
+          <li><a href="product.html">Executive Range</a></li>
+          <li><a href="product.html">Urban Collection</a></li>
+          <li><a href="product.html">Hamptons Style</a></li>
         </ul>
       </div>
       <div>
@@ -853,6 +765,7 @@
   </script>
 </body>
 </html>
+
 
 
 
