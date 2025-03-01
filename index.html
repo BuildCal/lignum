@@ -586,13 +586,17 @@
 
         @media (max-width: 768px) {
             .hero {
+                height: auto;
                 padding: 50px 5%;
                 flex-direction: column;
             }
 
             .hero-content {
-                width: 100%;
+                margin: 0 auto;
                 text-align: center;
+                width: 100%;
+                max-width: none;
+                flex: none;
                 margin-bottom: 40px;
             }
 
@@ -601,7 +605,9 @@
             }
             
             .hero-image-container {
+                flex: none;
                 width: 100%;
+                height: 350px;
             }
 
             .mobile-toggle {
