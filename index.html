@@ -586,11 +586,11 @@
 
         @media (max-width: 768px) {
             .hero {
-                min-height: auto;
-                padding: 100px 0 300px;
-                background: linear-gradient(to bottom, rgba(255,255,255,0.9) 30%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0.3) 100%), url('hero-image.jpg');
-                background-size: 100% auto;
+                height: auto;
+                padding: 100px 0;
+                background-size: 100%;
                 background-position: bottom center;
+                padding-bottom: 350px;
             }
 
             .hero-content {
@@ -598,28 +598,10 @@
                 text-align: center;
                 width: 90%;
                 max-width: none;
-                border-left: none;
-                border-top: 5px solid var(--primary);
-                padding: 40px 20px;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero h2 {
-                font-size: 1.5rem;
             }
 
             .hero-buttons {
                 justify-content: center;
-            }
-            
-            .hero-badge {
-                top: 20px;
-                right: 20px;
-                font-size: 0.9rem;
-                padding: 10px 20px;
             }
 
             .mobile-toggle {
@@ -698,16 +680,13 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-badge">
-            <i class="fas fa-award"></i> 100% Australian Made
-        </div>
         <div class="hero-content">
-            <h1>Transform Your Home's Entrance</h1>
-            <h2>Australia's Premier Timber Entry Doors</h2>
-            <p>Discover the timeless elegance and unmatched quality of Lignum Doors. Expertly crafted solid timber doors that add character, value, and style to your home.</p>
+            <h1>Elevate Your Home's First Impression</h1>
+            <h2 style="font-style: italic; color: #333; margin-bottom: 20px; font-weight: 400;">Australia's Premier Timber Entry Doors</h2>
+            <p>Premium Australian-made timber entry doors crafted with precision and elegance to welcome you home in style.</p>
             <div class="hero-buttons">
-                <a href="#collection" class="btn">View Our Collection</a>
-                <a href="#contact" class="btn btn-outline">Request a Quote</a>
+                <a href="#collection" class="btn">Explore Collection</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
             </div>
         </div>
     </section>
